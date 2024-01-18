@@ -1,5 +1,5 @@
 # Quiz App
-To help familiarize you with these tests and allow you to use the skills covered in this module, this Challenge invites you to build a timed coding quiz with multiple-choice questions. This app will run in the browser and will feature dynamically updated HTML and CSS powered by JavaScript code that you write. It will have a clean, polished, and responsive user interface. 
+
 ## Description
 
 The main goal of this project is to build a timed coding quiz with multiple-choice questions. This app will run in the browser and will feature dynamically updated HTML and CSS powered by JavaScript code that you write. It will also have a clean and polished, responsive user interface that adapts to multiple screen sizes.
@@ -78,7 +78,7 @@ Please refer to the LICENSE in the repo.
 
 ## Features
 
-JavaScript, variables, functions, if statements, ternary operators, DOM HTML, etc.
+JavaScript, variables, functions, if statements, callback functions, DOM HTML, time inerval, etc.
 <br>
 CSS, reset.
 <br>
@@ -89,5 +89,3 @@ Basic HTML template with semantic elements.
 In order to test, run the program using the "Open with Live Server" Exstension.
 <br>
 I would also have DevTools open to see the logs.
-<br>
-There are also a few test logs in the console to help ensure the app is fully operable.
