@@ -4,7 +4,7 @@
 
 The main goal of this project is to build a timed coding quiz with multiple-choice questions. This app will run in the browser and will feature dynamically updated HTML and CSS powered by JavaScript code that you write. It will also have a clean and polished, responsive user interface that adapts to multiple screen sizes.
 <br>
-After completion of the project, I have a better understanding on declaring/calling variables, functions, arrow-functions, if-statments, ternary operators and for loops. I also learned some better ways to refactor the JavaScript code, thus making the code easier to read and more modular!
+After completion of the project, I have a better understanding on declaring/calling variables, functions, arrow-functions, if-statments, callbacks and for loops. I also learned some better ways to refactor the JavaScript code, thus making the code easier to read and more modular!
 
 ## Table of Contents
 
@@ -34,13 +34,13 @@ Steps Include:
 
 Here's what the expected output should be:
 
-![alt text](assets/Images/passwordGeneratorscrnsht.png)
+![alt text](../assets/Images/screenshot.png)
 
 ## Links
 
 Link to deployed application:
 <br>
-[logo]: https://prismhead26.github.io/passwordGenerator/ "Password Generator live application"
+[logo]: https://prismhead26.github.io/Quiz_App/ "Quiz App live application"
 <br>
 Link to HTML file:
 <br>
@@ -70,11 +70,14 @@ Please refer to the LICENSE in the repo.
 
 ## Badges
 
-![Static Badge](https://img.shields.io/badge/JavaScript-%2043.4%25-yellow)
+![Static Badge](https://img.shields.io/badge/Javascript%20-82%25%20-yellow)
+
 <br>
-![Static Badge](https://img.shields.io/badge/CSS-%2038.7%25-purple)
+
+![Static Badge](https://img.shields.io/badge/CSS%20-7%25%20-purple)
 <br>
-![Static Badge](https://img.shields.io/badge/HTML-%2017.9%25-red)
+
+![Static Badge](https://img.shields.io/badge/HTML%20-11%25%20-orange)
 
 ## Features
 
