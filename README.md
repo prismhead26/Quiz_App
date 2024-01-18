@@ -34,7 +34,7 @@ Steps Include:
 
 Here's what the expected output should be:
 
-![alt text](../assets/Images/screenshot.png)
+![alt text](assets/Images/screenshot.png)
 
 ## Links
 
