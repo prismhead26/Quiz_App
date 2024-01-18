@@ -93,7 +93,7 @@ document.querySelector('.quiz').style.cssText = "padding: 20px 0;"
 
 
 let timerEl = document.querySelector("#timer");
-let time = questions.length * 15; 
+let time = questions.length * 10; 
 let timerId;
 timerEl.style.cssText = 'color: white; font-size: 1.3rem'
 // let timeTextEl = document.querySelector("#timeText");
