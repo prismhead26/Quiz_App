@@ -86,6 +86,18 @@ const mostRecentScore = localStorage.getItem('mostRecentScore')
 const highScores = JSON.parse(localStorage.getItem('highScores')) || [];
 const MAX_HIGH_SCORES = 5
 
+document.body.style.cssText = "background: navy;background-image: url(./assets/images/5073414.jpg);"
+document.querySelector('#title').style.cssText = "font-size: 25px;color: #001e4d;font-weight: 600;border-bottom: 1px solid #333;padding-bottom: 30px;"
+document.querySelector('.question').style.cssText = "font-size: 18px;color: #001e4d;font-weight: 600;"
+document.querySelector('.app').style.cssText = "display: flex; flex-direction: column; justify-content: center;background: lightgray;width: 90%;max-width: 600px;margin: 100px auto 0px;border-radius: 10px;padding: 30px;"
+document.querySelector('.quiz').style.cssText = "padding: 20px 0;"
+
+
+// document.querySelector('.btn').style.cssText = "font-weight: 500;border: 1px solid #222;padding: 10px;margin: 10px 0;text-align: left;border-radius: 4px;cursor: pointer;transition: all 0.3s;"
+// document.querySelector('#next-btn').style.cssText = "background: #001e4d;color: #fff;font-weight: 500;width: 150px;border: 0;padding: 10px;margin: 20px auto 0;border-radius: 4px;cursor: pointer;display: none;"
+// document.querySelector('.correct').style.cssText = "background: #9aeabc;"
+// document.querySelector('.incorrect').style.cssText = "background: #ff9393;"
+
 // set score/currentQuestionindex to 0 
 // set next button text, could have put into html
 // chain next step/function ---> showQuestion
@@ -115,6 +127,7 @@ function showQuestion() {
         const button = document.createElement("button");
         button.innerHTML = answer.text;
         button.classList.add("btn");
+        button.setAttribute("style", "display: flex; flex-direction: column; justify-content: center; font-weight: 500;border: 1px solid #222;padding: 10px;margin: 10px 0;text-align: left;border-radius: 4px;cursor: pointer;transition: all 0.3s;")
         answerButtons.appendChild(button);
         //add true or false in the data-set
         if(answer.correct){
@@ -127,7 +140,8 @@ function showQuestion() {
 // while a the answerButtons section/element has a appended children remove each child / button
 // removing the previous buttons
 function resetState(){
-    nextButton.style.display = "none";
+    nextButton.setAttribute("style" , "display: none; background: #001e4d;color: #fff;font-weight: 500;width: 150px;border: 0;padding: 10px;margin: 20px auto 0;border-radius: 4px;cursor: pointer;display: none;")
+    // nextButton.style.display = "none";
     while (answerButtons.firstChild) {
         answerButtons.removeChild(answerButtons.firstChild);
     }
@@ -149,9 +163,14 @@ function selectAnswer(e){
 
     if(isCorrect) {
         selectedBtn.classList.add("correct");
+        // document.querySelector('.correct')=("styles", "background: #9aeabc;")
+        selectedBtn.setAttribute('style', 'background: green;')
         score++;
     } else {
         selectedBtn.classList.add("incorrect");
+        // document.querySelector('.incorrect')=("styles", "background: #ff9393;")
+        selectedBtn.setAttribute('style', 'background: red;')
+
     }
     Array.from(answerButtons.children).forEach(button => {
         if(button.dataset.correct === "true") {
@@ -177,9 +196,7 @@ function showScore() {
     input.setAttribute('type', 'text');
     input.setAttribute('placeholder', 'Enter your name');
     input.setAttribute('id', 'username')
-    input.setAttribute('style', 'text-align:center;');
-    input.style.margin = "20px auto 0";
-
+    input.setAttribute('style', 'font-size: 1.5rem; font-weight: 600; padding: 2rem 1rem; text-align:center; margin: 20px 3rem 0;');
     // input.style.cssText = 'textAlign:center;'
     // input.style.textAlign = 'center;'
     container.appendChild(input)
@@ -187,6 +204,7 @@ function showScore() {
     const newButton = document.createElement('button');
     newButton.textContent = 'Submit and/or view leaderboard';
     newButton.setAttribute('type', 'submit')
+    newButton.setAttribute('style', 'color: red;font-size: 1.5rem;font-weight: 600;padding: 2rem 1rem;text-align: center;margin: 20px 3rem 0;background: lightBlue');
     newButton.classList.add('btn')
     container.appendChild(newButton);
     console.log('test')
@@ -240,5 +258,8 @@ nextButton.addEventListener("click", ()=>{
         startQuiz();
     }
 })
+
+
+
 // initiate the js with the startQuiz func
 startQuiz();
