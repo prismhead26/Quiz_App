@@ -96,9 +96,7 @@ let timerEl = document.querySelector("#timer");
 let time = questions.length * 10; 
 let timerId;
 timerEl.style.cssText = 'color: white; font-size: 1.3rem'
-// let timeTextEl = document.querySelector("#timeText");
 document.querySelector("#timeText").style.cssText = 'color: white; font-size: 1.3rem'
-
 
 // set score/currentQuestionindex to 0 
 // set next button text, could have put into html
@@ -111,17 +109,7 @@ function startQuiz() {
     nextButton.innerHTML = "Next";
     showQuestion();
 }
-
-
-
-
-// Check for right answers and deduct 
-// Time for wrong answer, go to next question 
-
-
-
-// End quiz by hiding questions, 
-// Stop timer and show final score 
+//timer callback
 function quizEnd() { 
     clearInterval(timerId);
     if (currentQuestionIndex === 9) {
@@ -132,7 +120,7 @@ function quizEnd() {
 } 
 
 
-// End quiz if timer reaches 0 
+// time decrement 
 function clockTick() { 
     time--; 
     timerEl.textContent = time; 
@@ -236,7 +224,6 @@ function showScore() {
     input.setAttribute('style', 'font-size: 1.5rem; font-weight: 600; padding: 2rem 1rem; text-align:center; margin: 20px 3rem 0;');
     container.appendChild(input)
 
-
     const newButton = document.createElement('button');
     newButton.textContent = 'Submit and/or view leaderboard';
     newButton.setAttribute('type', 'submit')
@@ -254,8 +241,8 @@ function showScore() {
     }
 
     newButton.addEventListener('click', (e) => {
-    e.preventDefault()
-
+   
+        e.preventDefault()
     const score = {
         score: mostRecentScore, 
         name: input.value
