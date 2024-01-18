@@ -85,7 +85,7 @@ let score = 0;
 const mostRecentScore = localStorage.getItem('mostRecentScore')
 const highScores = JSON.parse(localStorage.getItem('highScores')) || [];
 
-document.body.style.cssText = "background: navy;background-image: url(./assets/Images/hexImages.jpg);"
+document.body.style.cssText = "background: navy;background-image: url(../assets/Images/hexImages.jpg);"
 document.querySelector('#title').style.cssText = "font-size: 25px;color: #001e4d;font-weight: 600;border-bottom: 1px solid #333;padding-bottom: 30px;"
 document.querySelector('.question').style.cssText = "font-size: 18px;color: #001e4d;font-weight: 600;"
 document.querySelector('.app').style.cssText = "display: flex; flex-direction: column; justify-content: center;background: lightgray;width: 90%;max-width: 600px;margin: 100px auto 0px;border-radius: 10px;padding: 30px;"
