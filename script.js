@@ -241,10 +241,10 @@ function showScore() {
     }
 
     newButton.addEventListener('click', (e) => {
-   
+
         e.preventDefault()
     const score = {
-        score: mostRecentScore, 
+        score: finalScore, 
         name: input.value
     }
     highScores.push(score)
@@ -265,7 +265,7 @@ function showScore() {
 // if the currentQuestionIndex is less than the length of the questions
 // showQuestion 
 // else showScore functin "page"
-function handleNextButton() {
+function nextBtnFunc() {
     currentQuestionIndex++;
     if (currentQuestionIndex < questions.length) {
         showQuestion();
@@ -276,11 +276,11 @@ function handleNextButton() {
 
 // create play again btn
 // addEventListener to nextButton
-// callback func for if the there are still more questions handleNextBtn
+// callback func for if the there are still more questions nextBtn
 // else StarQuiz to play again
 nextButton.addEventListener("click", ()=>{
     if(currentQuestionIndex < questions.length) {
-        handleNextButton();
+        nextBtnFunc();
     } else {
         startQuiz();
     }
