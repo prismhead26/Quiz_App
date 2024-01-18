@@ -2,7 +2,7 @@ const highScoresList = document.querySelector('#highScoresList')
 const highScores = JSON.parse(localStorage.getItem('highScores')) || []
 
 
-document.body.style.cssText = "background: navy;background-image: url(./assets/images/5073414.jpg);"
+document.body.style.cssText = "background: navy;background-image: url(./assets/images/hexImages.jpg);"
 document.querySelector(".container").style.cssText = "display: flex; justify-content: center";
 // document.querySelector("#highScores").style.cssText = "display: flex; justify-content: center; flex-direction: column; align-items: center;";
 document.querySelector(".leaderboard").style.cssText = "font-size: 4rem; color: red; margin: 40px auto; text-align: center;";
