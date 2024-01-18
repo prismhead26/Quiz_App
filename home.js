@@ -84,7 +84,6 @@ let score = 0;
 
 const mostRecentScore = localStorage.getItem('mostRecentScore')
 const highScores = JSON.parse(localStorage.getItem('highScores')) || [];
-const MAX_HIGH_SCORES = 5
 
 document.body.style.cssText = "background: navy;background-image: url(./assets/images/5073414.jpg);"
 document.querySelector('#title').style.cssText = "font-size: 25px;color: #001e4d;font-weight: 600;border-bottom: 1px solid #333;padding-bottom: 30px;"
@@ -93,15 +92,55 @@ document.querySelector('.app').style.cssText = "display: flex; flex-direction: c
 document.querySelector('.quiz').style.cssText = "padding: 20px 0;"
 
 
+let timerEl = document.querySelector("#timer");
+let time = questions.length * 15; 
+let timerId;
+timerEl.style.cssText = 'color: white; font-size: 1.3rem'
+// let timeTextEl = document.querySelector("#timeText");
+document.querySelector("#timeText").style.cssText = 'color: white; font-size: 1.3rem'
+
+
 // set score/currentQuestionindex to 0 
 // set next button text, could have put into html
 // chain next step/function ---> showQuestion
 function startQuiz() {
+    timerId = setInterval( clockTick, 1000 ); 
+    timerEl.textContent = time; 
     currentQuestionIndex = 0;
     score = 0;
     nextButton.innerHTML = "Next";
     showQuestion();
 }
+
+
+
+
+// Check for right answers and deduct 
+// Time for wrong answer, go to next question 
+
+
+
+// End quiz by hiding questions, 
+// Stop timer and show final score 
+function quizEnd() { 
+    clearInterval(timerId);
+    if (currentQuestionIndex === 9) {
+        return
+    } else {
+        showScore()
+    }
+} 
+
+
+// End quiz if timer reaches 0 
+function clockTick() { 
+    time--; 
+    timerEl.textContent = time; 
+    if (time <= 0) { 
+        quizEnd(); 
+    } 
+} 
+
 // reset function for each question... add now, build after showQuestion func
 // choose current question based on the currentQuestionIndex
 // declare questionNo to show help with progression
@@ -161,6 +200,11 @@ function selectAnswer(e){
         selectedBtn.setAttribute('style', 'background: green;')
         score++;
     } else {
+            time -= 10; 
+            if (time < 0) { 
+                time = 0; 
+            } 
+            timerEl.textContent = time; 
         selectedBtn.classList.add("incorrect");
         selectedBtn.setAttribute('style', 'background: red;')
 
@@ -179,11 +223,11 @@ function selectAnswer(e){
 // show btn. diplay block to revert the display none
 function showScore() {
     resetState();
+    currentQuestionIndex = 9
     let finalScore = score * 100
     localStorage.setItem('mostRecentScore', finalScore)
     questionEl.innerHTML = `You scored ${score} out of ${questions.length}, with a total of ${finalScore} points!`;
-    nextButton.innerHTML = "Play Again";
-    nextButton.style.display = "block";
+    nextButton.style.display = "none";
 
     const input = document.createElement('input');
     input.setAttribute('type', 'text');

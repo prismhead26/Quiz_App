@@ -1,99 +1,93 @@
-# 04 Web APIs: Code Quiz
+# Quiz App
+To help familiarize you with these tests and allow you to use the skills covered in this module, this Challenge invites you to build a timed coding quiz with multiple-choice questions. This app will run in the browser and will feature dynamically updated HTML and CSS powered by JavaScript code that you write. It will have a clean, polished, and responsive user interface. 
+## Description
 
-## Your Task
+The main goal of this project is to build a timed coding quiz with multiple-choice questions. This app will run in the browser and will feature dynamically updated HTML and CSS powered by JavaScript code that you write. It will also have a clean and polished, responsive user interface that adapts to multiple screen sizes.
+<br>
+After completion of the project, I have a better understanding on declaring/calling variables, functions, arrow-functions, if-statments, ternary operators and for loops. I also learned some better ways to refactor the JavaScript code, thus making the code easier to read and more modular!
 
-At some point in your journey to become a full-stack web developer, you’ll likely be asked to complete a coding assessment&mdash;perhaps as part of an interview process. A typical coding assessment includes both multiple-choice questions and interactive coding challenges.
+## Table of Contents
 
-To help familiarize you with these tests and allow you to use the skills covered in this module, this Challenge invites you to build a timed coding quiz with multiple-choice questions. This app will run in the browser and will feature dynamically updated HTML and CSS powered by JavaScript code that you write. It will have a clean, polished, and responsive user interface.
+- [Installation](#installation)
+- [Usage](#usage)
+- [Credits](#credits)
+- [License](#license)
+- [Badges](#badges)
+- [Features](#features)
+- [Tests](#tests)
+- [Links](#links)
 
-This week’s coursework will equip you with all the skills you need to succeed in this assignment.
+## Installation
 
-## User Story
+Chrome and/or Firefox are the preferred browsers to view to the program.
+<br>
+For the IDE, use Vs Code as well as the "Open with Live Server" Extension.
 
-```
-AS A coding boot camp student
-I WANT to take a timed quiz on JavaScript fundamentals that stores high scores
-SO THAT I can gauge my progress compared to my peers
-```
+Steps Include:
 
-## Acceptance Criteria
+- Install tools (Highly recommend an up to date web browser for JavaScript)
+- Clone repository
+- Pull to local sytem
+- Create environment using extension
 
-```
-GIVEN I am taking a code quiz
-WHEN I click the start button
-THEN a timer starts and I am presented with a question
-WHEN I answer a question
-THEN I am presented with another question
-WHEN I answer a question incorrectly
-THEN time is subtracted from the clock
-WHEN all questions are answered or the timer reaches 0
-THEN the game is over
-WHEN the game is over
-THEN I can save my initials and my score
-```
+## Usage
 
-## Mock-Up
+Here's what the expected output should be:
 
-The following animation demonstrates the application functionality:
+![alt text](assets/Images/passwordGeneratorscrnsht.png)
 
-![A user clicks through an interactive coding quiz, then enters initials to save the high score before resetting and starting over.](./Assets/04-web-apis-homework-demo.gif)
+## Links
 
-## Grading Requirements
+Link to deployed application:
+<br>
+[logo]: https://prismhead26.github.io/passwordGenerator/ "Password Generator live application"
+<br>
+Link to HTML file:
+<br>
+[HTML](/home.html)
+[HTML](/leaderboard.html)
+<br>
+Link to CSS file:
+<br>
+[CSS](/assets/CSS/reset.css)
+<br>
+Link to JavaScript file:
+<br>
+[JavaScript](/home.js)
+[JavaScript](/leaderboard.js)
+<br>
+Link to README file:
+<br>
+[README](/README.md)
 
-> **Note**: If a Challenge assignment submission is marked as “0”, it is considered incomplete and will not count towards your graduation requirements. Examples of incomplete submissions include the following:
->
-> - A repository that has no code
->
-> - A repository that includes a unique name but nothing else
->
-> - A repository that includes only a README file but nothing else
->
-> - A repository that only includes starter code
+## Credits
 
-This Challenge is graded based on the following criteria:
+N/A
 
-### Technical Acceptance Criteria: 40%
+## License
 
-- Satisfies all of the preceding acceptance criteria.
+Please refer to the LICENSE in the repo.
 
-### Deployment: 32%
+## Badges
 
-- Application deployed at live URL.
+![Static Badge](https://img.shields.io/badge/JavaScript-%2043.4%25-yellow)
+<br>
+![Static Badge](https://img.shields.io/badge/CSS-%2038.7%25-purple)
+<br>
+![Static Badge](https://img.shields.io/badge/HTML-%2017.9%25-red)
 
-- Application loads with no errors.
+## Features
 
-- Application GitHub URL submitted.
+JavaScript, variables, functions, if statements, ternary operators, DOM HTML, etc.
+<br>
+CSS, reset.
+<br>
+Basic HTML template with semantic elements.
 
-- GitHub repository contains application code.
+## Tests
 
-### Application Quality: 15%
-
-- Application user experience is intuitive and easy to navigate.
-
-- Application user interface style is clean and polished.
-
-- Application resembles the mock-up functionality provided in the Challenge instructions.
-
-### Repository Quality: 13%
-
-- Repository has a unique name.
-
-- Repository follows best practices for file structure and naming conventions.
-
-- Repository follows best practices for class/id naming conventions, indentation, quality comments, etc.
-
-- Repository contains multiple descriptive commit messages.
-
-- Repository contains quality readme file with description, screenshot, and link to deployed application.
-
-## Review
-
-You are required to submit BOTH of the following for review:
-
-- The URL of the functional, deployed application.
-
-- The URL of the GitHub repository, with a unique name and a readme describing the project.
-
----
-
-© 2023 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
+In order to test, run the program using the "Open with Live Server" Exstension.
+<br>
+I would also have DevTools open to see the logs.
+<br>
+There are also a few test logs in the console to help ensure the app is fully operable.
