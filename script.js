@@ -102,6 +102,12 @@ document.querySelector("#timeText").style.cssText = 'color: white; font-size: 1.
 // set next button text, could have put into html
 // chain next step/function ---> showQuestion
 function startQuiz() {
+    nextButton.innerHTML = "Start Game";
+    nextButton.addEventListener('click', Quiz)
+}
+
+function Quiz() {
+    nextButton.removeEventListener('click', Quiz)
     timerId = setInterval( clockTick, 1000 ); 
     timerEl.textContent = time; 
     currentQuestionIndex = 0;
@@ -112,11 +118,12 @@ function startQuiz() {
 //timer callback
 function quizEnd() { 
     clearInterval(timerId);
-    if (currentQuestionIndex === 9) {
-        return
-    } else {
-        showScore()
-    }
+    // if (currentQuestionIndex === 9) {
+    //     return
+    // } else {
+    //     showScore()
+    // }
+    showScore()
 } 
 
 
@@ -211,7 +218,7 @@ function selectAnswer(e){
 // show btn. diplay block to revert the display none
 function showScore() {
     resetState();
-    currentQuestionIndex = 9
+    // currentQuestionIndex = 9
     let finalScore = score * 100
     localStorage.setItem('mostRecentScore', finalScore)
     questionEl.innerHTML = `You scored ${score} out of ${questions.length}, with a total of ${finalScore} points!`;
@@ -232,32 +239,35 @@ function showScore() {
     container.appendChild(newButton);
 
     input.addEventListener('keyup', () => {
-        newButton.disabled = !input.value
+        // newButton.disabled = !input.value
+        input.setAttribute('style', 'font-size: 1.5rem; font-weight: 600; padding: 2rem 1rem; text-align:center; margin: 20px 3rem 0;');
     })
 
 
-    if (!input.value || input.value === null) {
-    newButton.disabled = !input.value
-    }
+    // default statement
+    // newButton.disabled = !input.value
 
     newButton.addEventListener('click', (e) => {
-
         e.preventDefault()
-    const score = {
-        score: finalScore, 
-        name: input.value
-    }
-    highScores.push(score)
 
-    highScores.sort((a, b) => {
-        return b.score - a.score
-    })
+        if (!input.value) {
+            input.setAttribute('style', 'border: 5px solid red; font-size: 1.5rem; font-weight: 600; padding: 2rem 1rem; text-align:center; margin: 20px 3rem 0;')
+            return
+        }
 
-    highScores.splice(5)
+        const score = {
+            score: finalScore, 
+            name: input.value
+        }
+        highScores.push(score)
 
-    localStorage.setItem('highScores', JSON.stringify(highScores))
-    window.location.assign('leaderboard.html')
+        // returns sorted scores high to low
+        highScores.sort((a, b) => b.score - a.score)
 
+        highScores.splice(5)
+
+        localStorage.setItem('highScores', JSON.stringify(highScores))
+        window.location.assign('leaderboard.html')
     });
 }
 // handling the next btn
@@ -268,10 +278,9 @@ function showScore() {
 function nextBtnFunc() {
     currentQuestionIndex++;
     if (currentQuestionIndex < questions.length) {
-        showQuestion();
-    } else {
-        showScore();
+        return showQuestion();
     }
+    return quizEnd();
 }
 
 // create play again btn
